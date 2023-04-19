@@ -9,6 +9,8 @@ Purpose is extract all the 4 slides in a page into 4 images and likewise for all
 Part 2
 In the second part the the script should loop through the different folder containing slides of the particular folder and convert each of them into a ppt with the same folder name.
 
+```python
+
 import PyPDF2
 import io
 from PIL import Image
@@ -32,5 +34,9 @@ with open('example.pdf', 'rb') as file:
                 # Use Pillow to open and save the image
                 image = Image.open(stream)
                 image.save(obj[1:] + '.jpg', 'JPEG')
+```
+In this code, we first open the PDF file in binary mode using open(). Then, we use the PyPDF2 library to read the contents of the file and loop through each page. For each page, we get a list of all the objects on the page and loop through each object. We check if the object is an image by checking its /Subtype attribute. If it is an image, we get the image data using io.BytesIO() and then use the Pillow library (PIL) to open and save the image as a .jpg file.
+
+Note that this code assumes that all the images in the PDF file are in JPEG format. If there are images in other formats (such as PNG), you'll need to modify the code accordingly.
 
 Pull requests are welcome....
