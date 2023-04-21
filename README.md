@@ -40,3 +40,6 @@ In this code, we first open the PDF file in binary mode using open(). Then, we u
 Note that this code assumes that all the images in the PDF file are in JPEG format. If there are images in other formats (such as PNG), you'll need to modify the code accordingly.
 
 Pull requests are welcome....
+
+
+I would also suggest considering the Google Cloud Vision API and Document AI API for this particular usecase. Both provide prebuilt python modules with better extraction from PDFs to images and text/forms respectively.
